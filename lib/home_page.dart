@@ -333,6 +333,7 @@ class _HomePageState extends State<HomePage> {
         selectedLabelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
         type: BottomNavigationBarType.fixed,
         unselectedFontSize: 14,
+        unselectedItemColor: Colors.black87,
         currentIndex: theIndex,
         items: [
           BottomNavigationBarItem(
