@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../common widget/popular_food.dart';
-import '../model/food.dart';
+import '../../common widget/popular_food.dart';
+import '../../model/food.dart';
 
 
 class HomeBody extends StatelessWidget {

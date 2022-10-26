@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_ui/view/home_body.dart';
-import 'package:food_app_ui/view/screen2.dart';
-import 'package:food_app_ui/view/screen4.dart';
-import 'package:food_app_ui/view/user_account.dart';
+import 'package:food_app_ui/view/Screens/home_body.dart';
+import 'package:food_app_ui/view/Screens/screen2.dart';
+import 'package:food_app_ui/view/Screens/screen4.dart';
+import 'package:food_app_ui/view/Screens/user_account.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +11,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int theIndex = 0;
-
   List<Widget> widgetList = [HomeBody(), Screen2(), Account(), Screen4()];
 
   @override
