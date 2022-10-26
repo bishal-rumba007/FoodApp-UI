@@ -147,7 +147,7 @@ class HomeBody extends StatelessWidget {
                                               color: Colors.white,
                                               iconSize: 14,
                                               onPressed: () {
-                                                Get.to(() => DetailPage());
+                                                Get.to(() => DetailPage(food));
                                               },
                                               icon: Icon(Icons.arrow_forward_ios)
                                           ),
