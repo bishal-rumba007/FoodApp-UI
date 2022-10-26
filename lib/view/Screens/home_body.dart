@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/view/detail_page.dart';
+import 'package:get/get.dart';
 
 import '../../common widget/popular_food.dart';
 import '../../model/food.dart';
@@ -144,7 +146,9 @@ class HomeBody extends StatelessWidget {
                                               padding: EdgeInsets.only(left: 2),
                                               color: Colors.white,
                                               iconSize: 14,
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                Get.to(() => DetailPage());
+                                              },
                                               icon: Icon(Icons.arrow_forward_ios)
                                           ),
                                         ],
