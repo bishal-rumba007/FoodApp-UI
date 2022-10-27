@@ -4,6 +4,7 @@ import 'package:food_app_ui/common%20widget/listTiles.dart';
 
 class Account extends StatelessWidget {
   final searchController = TextEditingController();
+  final Color mainColor = Color(0xffD40909);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class Account extends StatelessWidget {
           child: Icon(
             Icons.location_on,
             size: 30,
-            color: Colors.red,
+            color: mainColor,
           ),
         ),
         centerTitle: true,
@@ -35,12 +36,12 @@ class Account extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 5, right: 10),
                 decoration: BoxDecoration(
-                    color: Colors.red, borderRadius: BorderRadius.circular(40)),
+                    color: mainColor, borderRadius: BorderRadius.circular(40)),
                 child: IconButton(
                     onPressed: () {},
                     icon: Center(
                         child: Icon(
-                      CupertinoIcons.bag,
+                      Icons.shopping_bag_outlined,
                       size: 28,
                     ))),
               ),
@@ -54,7 +55,7 @@ class Account extends StatelessWidget {
                 child: Center(
                     child: Text(
                   '3',
-                  style: TextStyle(color: Colors.red),
+                  style: TextStyle(color: mainColor),
                 )),
               )
             ],
@@ -75,7 +76,7 @@ class Account extends StatelessWidget {
                       height: 100,
                       width: 100,
                       decoration: BoxDecoration(
-                          color: Colors.red, shape: BoxShape.circle),
+                          color: mainColor, shape: BoxShape.circle),
                       child: Icon(
                         Icons.person,
                         color: Colors.white,

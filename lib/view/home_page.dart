@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int theIndex = 0;
   List<Widget> widgetList = [HomeBody(), Screen2(), Account(), Screen4()];
+  final Color mainColor = Color(0xffD40909);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
             theIndex = index;
           });
         },
-        selectedItemColor: Colors.red,
+        selectedItemColor: mainColor,
         selectedLabelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
         type: BottomNavigationBarType.fixed,
         unselectedFontSize: 14,

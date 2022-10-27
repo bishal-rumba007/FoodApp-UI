@@ -8,7 +8,7 @@ import '../../model/food.dart';
 
 
 class HomeBody extends StatelessWidget {
-
+  final Color mainColor = Color(0xffD40909);
   final searchController = TextEditingController();
 
   @override
@@ -30,7 +30,7 @@ class HomeBody extends StatelessWidget {
           child: Icon(
             Icons.location_on,
             size: 30,
-            color: Colors.red,
+            color: mainColor,
           ),
         ),
         centerTitle: true,
@@ -40,12 +40,12 @@ class HomeBody extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 5, right: 10),
                 decoration: BoxDecoration(
-                    color: Colors.red, borderRadius: BorderRadius.circular(40)),
+                    color: mainColor, borderRadius: BorderRadius.circular(40)),
                 child: IconButton(
                     onPressed: () {},
                     icon: Center(
                         child: Icon(
-                          CupertinoIcons.bag,
+                          Icons.shopping_bag_outlined,
                           size: 28,
                         ))),
               ),
@@ -108,7 +108,7 @@ class HomeBody extends StatelessWidget {
                     return Padding(
                       padding: EdgeInsets.only(right: 10),
                       child: Card(
-                        color: Colors.red,
+                        color: mainColor,
                         elevation: 10,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
@@ -147,7 +147,7 @@ class HomeBody extends StatelessWidget {
                                               color: Colors.white,
                                               iconSize: 14,
                                               onPressed: () {
-                                                Get.to(() => DetailPage(food));
+                                                Get.to(() => DetailPage(food), transition: Transition.leftToRight);
                                               },
                                               icon: Icon(Icons.arrow_forward_ios)
                                           ),
@@ -180,7 +180,8 @@ class HomeBody extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.red),
+                        color: mainColor
+                    ),
                   )
                 ],
               ),

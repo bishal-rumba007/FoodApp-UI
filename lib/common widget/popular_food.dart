@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class PopularFoods extends StatelessWidget {
-  const PopularFoods({Key? key}) : super(key: key);
+  PopularFoods({Key? key}) : super(key: key);
+
+  final Color mainColor = Color(0xffD40909);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class PopularFoods extends StatelessWidget {
             padding: EdgeInsets.only(top: 38, left: 18, right: 18),
             child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.red,
+                    color: mainColor,
                     borderRadius: BorderRadius.circular(20)
                 ),
                 height: 120,
