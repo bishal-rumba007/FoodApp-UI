@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/common%20widget/listTiles.dart';
+
+import '../../common widget/customDrawer.dart';
 
 class Account extends StatelessWidget {
   final searchController = TextEditingController();
@@ -12,11 +13,7 @@ class Account extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.black,
-          size: 30,
-        ),
+        leading: customLeading(),
         title: Text(
           'title',
           style: TextStyle(color: Colors.black),
@@ -99,6 +96,7 @@ class Account extends StatelessWidget {
           ),
         ),
       ),
+      drawer: MyDrawer(),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(vertical: 10),

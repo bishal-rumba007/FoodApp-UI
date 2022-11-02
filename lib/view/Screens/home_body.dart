@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/view/detail_page.dart';
 import 'package:get/get.dart';
 
+import '../../common widget/customDrawer.dart';
 import '../../common widget/popular_food.dart';
 import '../../model/food.dart';
 
@@ -16,11 +16,7 @@ class HomeBody extends StatelessWidget {
     return Scaffold(
       appBar:  AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.black,
-          size: 30,
-        ),
+        leading: customLeading(),
         title: Text(
           'Chicago IIL',
           style: TextStyle(color: Colors.black),
@@ -93,6 +89,7 @@ class HomeBody extends StatelessWidget {
           ),
         ),
       ),
+      drawer: MyDrawer(),
       body: SafeArea(
           child: ListView(children: [
             Padding(

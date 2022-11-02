@@ -2,6 +2,9 @@ final foodData = [
   {
     'foodName': 'Burger',
     'imageUrl': 'https://img.freepik.com/premium-vector/delicious-burger-icon-food-beverages_22052-1.jpg',
+    'size': [
+
+    ]
   },
   {
     'foodName': 'Pizza',

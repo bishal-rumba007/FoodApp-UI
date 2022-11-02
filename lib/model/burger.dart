@@ -1,32 +1,32 @@
 final burgerData = [
   {
     'size': 'small',
-    'imageUrl': 'https://img.freepik.com/premium-vector/delicious-burger-icon-food-beverages_22052-1.jpg',
+    'imageUrl': 'https://d2j6dbq0eux0bg.cloudfront.net/images/14450072/1156025882.jpg',
   },
   {
     'size': 'medium',
-    'imageUrl': 'https://thumbs.dreamstime.com/b/slice-pizza-icon-cartoon-style-isolated-vector-illustration-88454426.jpg',
+    'imageUrl': 'https://www.pngkey.com/png/detail/90-909691_healthy-burger-png-burger-transparent-background.png',
   },
   {
     'size': 'large',
-    'imageUrl': 'https://img.freepik.com/premium-vector/birthday-cake-icon-cartoon-design_161751-2438.jpg?w=2000',
+    'imageUrl': 'https://d2j6dbq0eux0bg.cloudfront.net/images/14450072/1156014693.jpg',
   },
 ];
 
 
-List<Food> foods = burgerData.map((e) => Food.fromJson(e)).toList();
+List<Burger> burgers = burgerData.map((e) => Burger.fromJson(e)).toList();
 
-class Food{
+class Burger{
   final String size;
   final String imageUrl;
 
-  Food({
+  Burger({
     required this.size,
     required this.imageUrl
   });
 
-  factory Food.fromJson(Map<String, dynamic> json){
-    return Food(
+  factory Burger.fromJson(Map<String, dynamic> json){
+    return Burger(
         size: json['size'],
         imageUrl: json['imageUrl']
     );

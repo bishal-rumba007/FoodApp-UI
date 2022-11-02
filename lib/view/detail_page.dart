@@ -12,18 +12,17 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
-
-  int itemCount = 0;
-
+  int itemCount = 1;
   void addItem(){
     setState(() {
       itemCount++;
+
     });
   }
 
   void removeItem(){
     setState(() {
-      if(itemCount > 0){
+      if(itemCount > 1){
         itemCount--;
       }
     });
@@ -126,7 +125,12 @@ class _DetailPageState extends State<DetailPage> {
                   Positioned(
                       top: 280,
                       left: 30,
-                      child: _cardButton(sizeName: 'S')
+                      child: InkWell(
+                        onTap: (){
+
+                        },
+                          child: _cardButton(sizeName: 'S')
+                      )
                   ),
                   Positioned(
                       top: 340,
@@ -253,7 +257,9 @@ class _cardButton extends StatelessWidget {
         style: TextButton.styleFrom(
           minimumSize: Size(20, 20)
         ),
-          onPressed: (){},
+          onPressed: (){
+
+          },
           child: Text(sizeName,
             style: TextStyle(
               fontSize: 20,
