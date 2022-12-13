@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 
 
@@ -17,7 +18,7 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.person),
-            title: Text('username'),
+            title: Text('username', style: TextStyle(fontSize: 12.sp),),
           ),
         ],
       ),
@@ -39,7 +40,7 @@ class customLeading extends StatelessWidget {
           icon: Icon(
             Icons.menu,
             color: Colors.black,
-            size: 30,
+            size: 8.5.w,
           ),
         );
       },

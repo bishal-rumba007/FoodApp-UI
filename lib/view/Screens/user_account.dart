@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/common%20widget/listTiles.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../common widget/customDrawer.dart';
 
@@ -14,81 +15,95 @@ class Account extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: customLeading(),
-        title: Text(
-          'title',
-          style: TextStyle(color: Colors.black),
-        ),
-        flexibleSpace: Container(
-          margin: EdgeInsets.only(right: 63, top: 63),
-          child: Icon(
-            Icons.location_on,
-            size: 30,
-            color: mainColor,
+        title: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Row(
+            children: [
+              Icon(
+                Icons.location_on,
+                size: 8.w,
+                color: mainColor,
+              ),
+              Text(
+                'Account',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: Colors.black,
+                ),
+              ),
+            ],
           ),
         ),
-        centerTitle: true,
         actions: [
           Stack(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 5, right: 10),
+                margin: EdgeInsets.only(top: 1.h, right: 2.w),
                 decoration: BoxDecoration(
                     color: mainColor, borderRadius: BorderRadius.circular(40)),
                 child: IconButton(
-                    onPressed: () {},
-                    icon: Center(
-                        child: Icon(
+                  onPressed: () {},
+                  icon: Center(
+                    child: Icon(
                       Icons.shopping_bag_outlined,
-                      size: 28,
-                    ))),
+                      size: 7.w,
+                    ),
+                  ),
+                ),
               ),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
-                margin: EdgeInsets.only(left: 32, top: 4),
-                height: 18,
-                width: 18,
+                margin: EdgeInsets.only(left: 8.w, top: 0.8.h),
+                height: 3.h,
+                width: 5.w,
                 child: Center(
-                    child: Text(
-                  '3',
-                  style: TextStyle(color: mainColor),
-                )),
+                  child: Text(
+                    '3',
+                    style: TextStyle(fontSize: 10.sp, color: Colors.red),
+                  ),
+                ),
               )
             ],
-          )
+          ),
         ],
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(180),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 1.w),
             child: Container(
-              height: 180,
+              height: 22.h,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(2.w),
                 child: Column(
                   children: [
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: 12.h,
+                      width: 25.w,
                       decoration: BoxDecoration(
                           color: mainColor, shape: BoxShape.circle),
                       child: Icon(
                         Icons.person,
                         color: Colors.white,
-                        size: 70,
+                        size: 20.w,
                       ),
                     ),
-                    Text('Sobhakar Poudel',
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.w500)),
-                    Text('98-xxxxxx | test@gmail.com',
-                        style: TextStyle(
-                            letterSpacing: 1,
-                            color: Colors.blueGrey,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600))
+                    Text(
+                      'Sobhakar Poudel',
+                      style: TextStyle(
+                          fontSize: 16.sp, fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      '98-xxxxxx | test@gmail.com',
+                      style: TextStyle(
+                        letterSpacing: 1,
+                        color: Colors.blueGrey,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -99,70 +114,92 @@ class Account extends StatelessWidget {
       drawer: MyDrawer(),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.symmetric(vertical: 1.4.h),
           children: [
             Container(
-                padding: EdgeInsets.all(10),
-                height: 220,
-                width: double.infinity,
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'ACCOUNT',
-                      style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
+              padding: EdgeInsets.all(2.w),
+              height: 33.h,
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'ACCOUNT',
+                    style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w500,
                     ),
-                    customListTile(title: 'Profile', leadingIcon: Icons.person),
-                    customListTile(title: 'Saved Address', leadingIcon: Icons.star),
-                    customListTile(title: 'Notification', leadingIcon: Icons.notifications),
-                  ],
-                )
+                  ),
+                  customListTile(title: 'Profile', leadingIcon: Icons.person),
+                  customListTile(
+                    title: 'Saved Address',
+                    leadingIcon: Icons.star,
+                  ),
+                  customListTile(
+                    title: 'Notification',
+                    leadingIcon: Icons.notifications,
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 10,),
-            Container(
-                padding: EdgeInsets.all(10),
-                height: 160,
-                width: double.infinity,
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'OFFERS',
-                      style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    customListTile(title: 'Promos', leadingIcon: Icons.person),
-                    customListTile(title: 'Get Discounts', leadingIcon: Icons.star),
-                  ],
-                )
+            SizedBox(
+              height: 1.5.h,
             ),
             Container(
-                padding: EdgeInsets.all(10),
-                height: 160,
-                width: double.infinity,
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SETTINGS',
-                      style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
+              padding: EdgeInsets.all(2.w),
+              height: 25.h,
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'OFFERS',
+                    style: TextStyle(
+                        color: Colors.blueGrey,
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  customListTile(
+                    title: 'Promos',
+                    leadingIcon: Icons.person,
+                  ),
+                  customListTile(
+                    title: 'Get Discounts',
+                    leadingIcon: Icons.star,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(2.w),
+              height: 25.h,
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'SETTINGS',
+                    style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w500,
                     ),
-                    customListTile(title: 'Themes', leadingIcon: Icons.person),
-                    customListTile(title: 'Privacy', leadingIcon: Icons.privacy_tip),
-                  ],
-                )),
-
+                  ),
+                  customListTile(
+                    title: 'Themes',
+                    leadingIcon: Icons.person,
+                  ),
+                  customListTile(
+                    title: 'Privacy',
+                    leadingIcon: Icons.privacy_tip,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

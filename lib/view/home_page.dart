@@ -3,6 +3,7 @@ import 'package:food_app_ui/view/Screens/home_body.dart';
 import 'package:food_app_ui/view/Screens/screen2.dart';
 import 'package:food_app_ui/view/Screens/screen4.dart';
 import 'package:food_app_ui/view/Screens/user_account.dart';
+import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -25,30 +26,33 @@ class _HomePageState extends State<HomePage> {
           });
         },
         selectedItemColor: mainColor,
-        selectedLabelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        selectedLabelStyle: TextStyle(
+          fontSize: 11.sp,
+          fontWeight: FontWeight.w500,
+        ),
         type: BottomNavigationBarType.fixed,
-        unselectedFontSize: 14,
+        unselectedFontSize: 10.5.sp,
         unselectedItemColor: Colors.black87,
         currentIndex: theIndex,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home'
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'favourites'
+            icon: Icon(Icons.favorite),
+            label: 'favourites',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Account'
+            icon: Icon(Icons.person),
+            label: 'Account',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Setting'
+            icon: Icon(Icons.settings),
+            label: 'Setting',
           ),
         ],
-      )
+      ),
     );
   }
 }
