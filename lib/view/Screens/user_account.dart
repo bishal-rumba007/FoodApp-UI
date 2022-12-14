@@ -56,8 +56,8 @@ class Account extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 margin: EdgeInsets.only(left: 8.w, top: 0.8.h),
-                height: 3.h,
-                width: 5.w,
+                height: 18,
+                width: 18,
                 child: Center(
                   child: Text(
                     '3',
