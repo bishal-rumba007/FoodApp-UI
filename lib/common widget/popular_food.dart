@@ -74,11 +74,11 @@ class PopularFoods extends StatelessWidget {
             ),
             Positioned(
               top: -1.8.h,
-              left: 24.w,
+              left: 25.w,
               child: Image.network(
                 "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
                 height: 23.h,
-                width: 50.w,
+                width: 45.w,
                 fit: BoxFit.cover,
               ),
             ),
