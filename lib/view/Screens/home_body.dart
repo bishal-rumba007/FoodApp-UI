@@ -18,8 +18,6 @@ class HomeBody extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: customLeading(),
-        //elevation: 0,
-        // toolbarHeight: 70,
         title: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Row(
@@ -61,8 +59,8 @@ class HomeBody extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 margin: EdgeInsets.only(left: 8.w, top: 0.8.h),
-                height: 3.h,
-                width: 5.w,
+                height: 18,
+                width: 18,
                 child: Center(
                     child: Text(
                   '3',
@@ -103,35 +101,10 @@ class HomeBody extends StatelessWidget {
       drawer: MyDrawer(),
       body: SafeArea(
         child: ListView(children: [
-          // Padding(
-          //   padding: EdgeInsets.symmetric(horizontal: 1.w),
-          //   child: Container(
-          //     color: Colors.white,
-          //     child: TextField(
-          //         controller: searchController,
-          //         onTap: () {
-          //           searchController.clear();
-          //         },
-          //         decoration: InputDecoration(
-          //           border: InputBorder.none,
-          //           contentPadding:
-          //               EdgeInsets.symmetric(horizontal: 1.w, vertical: 1.8.h),
-          //           hintText: 'Search our delicious burger',
-          //           hintStyle: TextStyle(
-          //               color: Colors.grey,
-          //               fontSize: 12.sp,
-          //               fontWeight: FontWeight.w500),
-          //           prefixIcon: Icon(
-          //             CupertinoIcons.search,
-          //             size: 7.5.w,
-          //           ),
-          //         )),
-          //   ),
-          // ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
             child: Container(
-              height: 20.5.h,
+              height: 170,
               width: double.infinity,
               child: ListView.builder(
                 itemCount: foods.length,
@@ -148,7 +121,7 @@ class HomeBody extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            width: 24.5.w,
+                            width: 100,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
@@ -156,8 +129,8 @@ class HomeBody extends StatelessWidget {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Container(
-                                      height: 9.h,
-                                      width: 20.w,
+                                      height: 80,
+                                      width: 80,
                                       child: Image.network(food.imageUrl)),
                                   Text(
                                     food.foodName,
