@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -51,9 +52,9 @@ class PopularFoods extends StatelessWidget {
                         child: Text(
                           'Chikcen Burger',
                           style: TextStyle(
-                              fontSize: 11.sp,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w600,
+                            fontSize: 11.sp,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       )
@@ -73,15 +74,15 @@ class PopularFoods extends StatelessWidget {
                   width: double.infinity),
             ),
             Positioned(
-              top: -1.8.h,
-              left: 25.w,
-              child: Image.network(
-                "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                height: 23.h,
-                width: 45.w,
-                fit: BoxFit.cover,
-              ),
-            ),
+                top: -1.8.h,
+                left: 25.w,
+                child: CachedNetworkImage(
+                  imageUrl:
+                      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+                  height: 23.h,
+                  width: 45.w,
+                  fit: BoxFit.cover,
+                )),
           ],
         ),
       ),

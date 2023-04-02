@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/model/food.dart';
 import 'package:get/get.dart';
@@ -123,10 +124,8 @@ class _DetailPageState extends State<DetailPage> {
                   child: Container(
                     height: 32.h,
                     width: 60.w,
-                    child: Image(
-                      image: NetworkImage(
-                        widget.foodData.imageUrl,
-                      ),
+                    child: CachedNetworkImage(
+                      imageUrl: widget.foodData.imageUrl,
                     ),
                   ),
                 ),
