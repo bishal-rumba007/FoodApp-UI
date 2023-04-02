@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_ui/view/detail_page.dart';
@@ -8,15 +9,24 @@ import '../../common widget/customDrawer.dart';
 import '../../common widget/popular_food.dart';
 import '../../model/food.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
   final Color mainColor = Color(0xffD40909);
   final searchController = TextEditingController();
+
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        elevation: 1,
+        shadowColor: Colors.grey,
         leading: customLeading(),
         title: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -113,60 +123,71 @@ class HomeBody extends StatelessWidget {
                   final food = foods[index];
                   return Padding(
                     padding: EdgeInsets.only(right: 3.w),
-                    child: Card(
-                      color: mainColor,
-                      elevation: 10,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 100,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                      },
+                      child: Card(
+                        color: _selectedIndex == index ? mainColor : null,
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
                                       height: 80,
                                       width: 80,
-                                      child: Image.network(food.imageUrl)),
-                                  Text(
-                                    food.foodName,
-                                    style: TextStyle(
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  Container(
-                                    //padding: EdgeInsets.only(right: 4),
-                                    decoration: BoxDecoration(
-                                        color: Colors.black87,
-                                        shape: BoxShape.circle),
-                                    height: 4.h,
-                                    width: 6.w,
-                                    child: Stack(
-                                      children: [
-                                        IconButton(
-                                            padding:
-                                                EdgeInsets.only(left: 0.8.w),
-                                            color: Colors.white,
-                                            iconSize: 4.w,
-                                            onPressed: () {
-                                              Get.to(() => DetailPage(food),
-                                                  transition:
-                                                      Transition.leftToRight);
-                                            },
-                                            icon:
-                                                Icon(Icons.arrow_forward_ios)),
-                                      ],
+                                      child: CachedNetworkImage(
+                                        imageUrl: food.imageUrl,
+                                      ),
                                     ),
-                                  )
-                                ],
+                                    Text(
+                                      food.foodName,
+                                      style: TextStyle(
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Container(
+                                      //padding: EdgeInsets.only(right: 4),
+                                      decoration: BoxDecoration(
+                                          color: _selectedIndex == index ? Colors.white  : Colors.black87,
+                                          shape: BoxShape.circle),
+                                      height: 4.h,
+                                      width: 6.w,
+                                      child: Stack(
+                                        children: [
+                                          IconButton(
+                                              padding:
+                                                  EdgeInsets.only(left: 0.8.w),
+                                              color: Colors.white,
+                                              iconSize: 4.w,
+                                              onPressed: () {
+                                                Get.to(() => DetailPage(food),
+                                                    transition: Transition.leftToRight);
+                                              },
+                                              icon: Icon(Icons.arrow_forward_ios,
+                                                color: _selectedIndex == index ? Colors.black : Colors.white,
+                                              ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   );
